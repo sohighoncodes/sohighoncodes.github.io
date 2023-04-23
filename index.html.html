@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accordion FAQ</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #fff;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .faq-container {
+        width: 60%;
+        margin: 20px auto;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid #ccc;
+        padding: 40px 10px 20px 0px;
+      }
+      .faq-content > p{
+        margin-top: 20px;
+        margin-bottom: 0px;
+      }
+
+      .faq-title {
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        padding-right: 30px;
+      }
+
+      .faq-title img {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+
+      .faq-title.active img {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0px 10px;
+        transition: max-height 0.5s ease-out, padding 0.5s ease-out, opacity 0.5s ease-out;
+        transition-delay: 0.1s;
+        
+      }
+
+      .active .faq-content {
+        max-height: 500px;
+        padding: 10px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition-delay: 0.1s;
+      }
+    </style>
+    <link rel="preconnect" href="https://rsms.me">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  </head>
+  <body>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-title">What is your return policy?<img src="https://uploads-ssl.webflow.com/600a7682415ab7d3aafe3a5c/60151633cb58213f20aa80ae_Group%20434.svg" alt="arrow icon" width="15" height="15"></div>
+        <div class="faq-content">
+          <p>We offer a 30-day return policy for all products. If you are not satisfied with your purchase, you can return it within 30 days of receipt for a full refund.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-title">Do you offer international shipping?<img src="https://uploads-ssl.webflow.com/600a7682415ab7d3aafe3a5c/60151633cb58213f20aa80ae_Group%20434.svg" alt="arrow icon" width="15" height="15"></div>
+        <div class="faq-content">
+          <p>Yes, we offer international shipping to most countries. Shipping rates and delivery times may vary based on the destination.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-title">How do I track my order?<img src="https://uploads-ssl.webflow.com/600a7682415ab7d3aafe3a5c/60151633cb58213f20aa80ae_Group%20434.svg" alt="arrow icon" width="15" height="15"></div>
+<div class="faq-content">
+<p>Once your order has shipped, you will receive an email with a tracking number and a link to track your package. You can also log in to your account on our website to view your order status and tracking information.</p>
+</div>
+</div>
+  <div class="faq-item">
+    <div class="faq-title">What payment methods do you accept?<img src="https://uploads-ssl.webflow.com/600a7682415ab7d3aafe3a5c/60151633cb58213f20aa80ae_Group%20434.svg" alt="arrow icon" width="15" height="15"></div>
+    <div class="faq-content">
+      <p>We accept all major credit cards, PayPal, and Apple Pay.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-title">How long will it take to receive my order?<img src="https://uploads-ssl.webflow.com/600a7682415ab7d3aafe3a5c/60151633cb58213f20aa80ae_Group%20434.svg" alt="arrow icon" width="15" height="15"></div>
+    <div class="faq-content">
+      <p>Delivery times vary based on the shipping method selected and the destination. Standard shipping typically takes 3-5 business days, while expedited shipping can take 1-2 business days. International orders may take longer to arrive due to customs processing.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const title = item.querySelector('.faq-title');
+
+    title.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
